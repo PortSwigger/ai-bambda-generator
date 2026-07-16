@@ -203,10 +203,12 @@ public enum BambdaType {
 
                 Respond with ONLY the Java code for the Bambda body. Do not include any explanation, \
                 prose, or Markdown fences. Concise inline comments are welcome. Make the code \
-                correct, defensive against null values (responses can be absent), and ready to paste \
-                directly into Burp. A Bambda with a non-void return type must produce its value with \
-                an explicit `return` statement, and every statement must be terminated with a \
-                semicolon. Keep the code as simple and elegant as possible: prefer the most direct, \
+                correct and ready to paste directly into Burp. Guard against null and missing \
+                values: a response can be absent (check `hasResponse()`), and a header must be read \
+                with `headerValue(name)` only after `hasHeader(name)` confirms it is present. A \
+                Bambda with a non-void return type \
+                must produce its value with an explicit `return` statement, and every statement must \
+                be terminated with a semicolon. Keep the code as simple and elegant as possible: prefer the most direct, \
                 readable solution, avoid unnecessary variables, branching, or abstraction, and write \
                 no more code than the task requires."""
                 .formatted(signature, apiAvailability(), contextGuidance, apiReference);
