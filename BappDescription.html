@@ -1,0 +1,23 @@
+<p>This extension generates Bambda code snippets from plain-language descriptions using Burp AI. Select the Bambda type that matches your intended use, describe the desired behavior, and the extension returns Java code ready to paste into a Bambda editor.</p>
+
+<h2>Features</h2>
+<ul>
+  <li>Generates Bambdas for table filters (Proxy HTTP history, WebSockets history, Site map, Logger), custom columns, Repeater custom actions, match-and-replace rules, and custom scan checks (passive and active).</li>
+  <li>Context-aware prompts supply the AI with the correct input variable, its type, and the required return value for each Bambda type, ensuring the output targets the appropriate API.</li>
+  <li>Adjustable temperature spinner (0.0-2.0, default 0.2) controls how deterministic or varied the generated output is.</li>
+  <li>Generated code is displayed in an editable text editor so it can be reviewed and adjusted before use.</li>
+  <li>One-click copy to clipboard for the generated snippet.</li>
+  <li>Per-type memory retains your description and last result separately for each Bambda type within a session, so switching between types does not discard previous work.</li>
+  <li>AI response is treated as untrusted text and displayed only in a plain-text editor; any surrounding Markdown code fences are stripped before display.</li>
+</ul>
+
+<h2>Usage</h2>
+<ol>
+  <li>Open the <strong>Bambda Generator</strong> tab.</li>
+  <li>Select the <strong>Bambda type</strong> from the dropdown that matches where you intend to use the snippet (for example, Proxy HTTP history table filter or Repeater custom action).</li>
+  <li>Enter a plain-language description of what the Bambda should do in the description field (for example, <code class=InlineCode>show only in-scope requests that returned a 500 status</code>).</li>
+  <li>Optionally adjust the <strong>Temperature</strong> value to control output variation.</li>
+  <li>Click <strong>Generate</strong> and wait for the AI response to appear in the output editor.</li>
+  <li>Review and edit the generated code as needed, then click <strong>Copy output</strong>.</li>
+  <li>Paste the snippet into the appropriate Bambda editor and test it against your traffic before relying on it.</li>
+</ol>
