@@ -130,9 +130,14 @@ public enum BambdaType {
             interactions it received.
             Every variant returns an `AuditResult`: `AuditResult.auditResult()` when nothing is \
             found, or `AuditResult.auditResult(AuditIssue.auditIssue(name, detail, remediation, \
-            baseUrl, AuditIssueSeverity.<LEVEL>, AuditIssueConfidence.<LEVEL>))` when an issue is \
-            identified. The scanner types (`AuditResult`, `AuditIssue`, `AuditIssueSeverity`, \
-            `AuditIssueConfidence`, `AuditInsertionPoint`) are imported — use them by simple name. \
+            baseUrl, AuditIssueSeverity.<LEVEL>, AuditIssueConfidence.<LEVEL>, background, \
+            remediationBackground, AuditIssueSeverity.<LEVEL>, requestResponse))` when an issue is \
+            identified — `baseUrl` must be a valid absolute URL (e.g. `requestResponse.request().url()`) \
+            and `name`, `detail`, `severity`, and `confidence` should describe the finding; pass null \
+            only for extras you cannot fill (`remediation`, `background`, `remediationBackground`, \
+            `typicalSeverity`). The scanner types (`AuditResult`, `AuditIssue`, \
+            `AuditIssueSeverity`, `AuditIssueConfidence`, `AuditInsertionPoint`) are imported — use \
+            them by simple name. \
             Because the check kind is chosen in Burp's UI rather than in the code, begin the snippet \
             with a comment naming the configuration it assumes — passive or active, the scope (per \
             request, per host, or per insertion point), and whether it uses Collaborator — so the \
