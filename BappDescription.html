@@ -1,23 +1,26 @@
-<p>This extension generates Bambda code snippets from plain-language descriptions using Burp AI. Select the Bambda type that matches your intended use, describe the desired behavior, and the extension returns Java code ready to paste into a Bambda editor.</p>
+<p>Writing Bambdas is one of the fastest ways to extend Burp Suite, but getting started can be intimidating. Whether you're new to Burp extensibility or just can't remember the exact Montoya API call you need, this extension helps you go from idea to working code in seconds.</p>
+
+<p>Simply describe what you want your Bambda to do in plain English, choose the type of Bambda you're creating, and let Burp AI generate a complete Java implementation that's ready to paste into the editor. It's a great way to prototype ideas quickly, learn the Bambda API, or eliminate the repetitive boilerplate when building more advanced logic.</p>
+
+<p>The extension understands the different Bambda contexts, so the generated code is tailored to the selected Bambda type. Whether you're filtering Proxy history, creating custom columns, automating Repeater, building match-and-replace rules, or writing custom scan checks, you'll receive code that's ready to adapt to your needs.</p>
+
+<p><strong>Note:</strong> AI is non-deterministic - expect results to vary and the first attempt not always to be right. Regenerate, tweak your description, or adjust the temperature. For better results, describe the behaviour clearly and include concrete details (header/parameter names, status codes, URL patterns).</p>
 
 <h2>Features</h2>
 <ul>
-  <li>Generates Bambdas for table filters (Proxy HTTP history, WebSockets history, Site map, Logger), custom columns, Repeater custom actions, match-and-replace rules, and custom scan checks (passive and active).</li>
-  <li>Context-aware prompts supply the AI with the correct input variable, its type, and the required return value for each Bambda type, ensuring the output targets the appropriate API.</li>
-  <li>Adjustable temperature spinner (0.0-2.0, default 0.2) controls how deterministic or varied the generated output is.</li>
-  <li>Generated code is displayed in an editable text editor so it can be reviewed and adjusted before use.</li>
-  <li>One-click copy to clipboard for the generated snippet.</li>
-  <li>Per-type memory retains your description and last result separately for each Bambda type within a session, so switching between types does not discard previous work.</li>
-  <li>AI response is treated as untrusted text and displayed only in a plain-text editor; any surrounding Markdown code fences are stripped before display.</li>
+  <li>Turn plain-language descriptions into working Bambda code with Burp AI.</li>
+  <li>Generates code that's tailored to the selected Bambda type, so you can spend less time looking up APIs and more time solving problems.</li>
+  <li>Review and edit generated code before copying it into Burp.</li>
+  <li>Quickly iterate on ideas by refining your prompt and regenerating code.</li>
 </ul>
 
 <h2>Usage</h2>
 <ol>
-  <li>Open the <strong>Bambda Generator</strong> tab.</li>
-  <li>Select the <strong>Bambda type</strong> from the dropdown that matches where you intend to use the snippet (for example, Proxy HTTP history table filter or Repeater custom action).</li>
+  <li>Open the "Bambda Generator" tab.</li>
+  <li>Select the "Bambda type" from the dropdown that matches where you intend to use the snippet (for example, Proxy HTTP history table filter or Repeater custom action).</li>
   <li>Enter a plain-language description of what the Bambda should do in the description field (for example, <code class=InlineCode>show only in-scope requests that returned a 500 status</code>).</li>
-  <li>Optionally adjust the <strong>Temperature</strong> value to control output variation.</li>
-  <li>Click <strong>Generate</strong> and wait for the AI response to appear in the output editor.</li>
-  <li>Review and edit the generated code as needed, then click <strong>Copy output</strong>.</li>
+  <li>Optionally adjust the "Temperature" value to control output variation.</li>
+  <li>Click "Generate" and wait for the AI response to appear in the output editor.</li>
+  <li>Review and edit the generated code as needed, then click "Copy output".</li>
   <li>Paste the snippet into the appropriate Bambda editor and test it against your traffic before relying on it.</li>
 </ol>
