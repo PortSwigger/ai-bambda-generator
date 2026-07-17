@@ -135,7 +135,20 @@ public enum BambdaType {
             identified — `baseUrl` must be a valid absolute URL (e.g. `requestResponse.request().url()`) \
             and `name`, `detail`, `severity`, and `confidence` should describe the finding; pass null \
             only for extras you cannot fill (`remediation`, `background`, `remediationBackground`, \
-            `typicalSeverity`). The scanner types (`AuditResult`, `AuditIssue`, \
+            `typicalSeverity`). Evidence the issue with a marked request/response: mark BOTH the \
+            injected payload in the request AND the response content that confirms the finding (the \
+            reflected payload, error text, or whatever indicator you tested for). Mark the exchange \
+            you actually sent (the `http.sendRequest` result), never the base `requestResponse`. \
+            Request markers: pass the SAME `ByteArray` payload you gave `buildHttpRequestWithPayload` \
+            to `insertionPoint.issueHighlights(payload)` (both take a `ByteArray`, not a String); it \
+            returns a `List<Range>` for the built request, so map it with `Marker::marker` \
+            (`issueHighlights(payload).stream().map(Marker::marker).toList()`). Response markers: \
+            find the indicator in the whole response with `int s = \
+            sent.response().toByteArray().indexOf(indicator)`, then \
+            `Marker.marker(s, s + indicator.length())`. \
+            `withRequestMarkers`/`withResponseMarkers` each return a new copy, so chain both — \
+            `sent.withRequestMarkers(reqMarkers).withResponseMarkers(respMarkers)` — and pass that \
+            single value into `auditIssue`. The scanner types (`AuditResult`, `AuditIssue`, \
             `AuditIssueSeverity`, `AuditIssueConfidence`, `AuditInsertionPoint`) are imported — use \
             them by simple name. \
             Because the check kind is chosen in Burp's UI rather than in the code, begin the snippet \
