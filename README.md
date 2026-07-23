@@ -1,6 +1,6 @@
 # AI Bambda Generator
 
-A Burp Suite extension that uses [Burp AI](https://portswigger.net/burp/documentation/desktop/extend-burp/extensions/creating/ai-extensibility) to generate [Bambdas](https://portswigger.net/burp/documentation/desktop/bambdas) from a plain-language description. Pick the kind of Bambda you want, describe what it should do, and the extension returns ready-to-paste Java for the snippet body.
+A Burp Suite extension that uses [Burp AI](https://portswigger.net/burp/documentation/desktop/extend-burp/extensions/creating/creating-ai-extensions) to generate [Bambdas](https://portswigger.net/burp/documentation/desktop/extend-burp/bambdas) from a plain-language description. Pick the kind of Bambda you want, describe what it should do, and the extension returns ready-to-paste Java for the snippet body.
 
 > **Disclaimer:** This extension is intended as a **starting point**, not a guarantee. AI-generated Bambdas will not always be correct or complete on the first attempt — treat the output as a draft to review, test, and refine rather than a finished snippet. Always check the generated code before running it against real traffic.
 
